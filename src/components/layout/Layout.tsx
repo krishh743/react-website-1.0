@@ -5,6 +5,7 @@ import LandingPage from "../../pages/contents/LandingPage";
 import HomePage from "../../pages/all-pages/HomePage";
 import ExploreTodo from "../../pages/all-pages/ExploreTodo";
 import Footer from "../footer/Footer";
+// import TestPage from "../../pages/test/Test";
 
 const AppLayout = () => {
   return (
@@ -24,6 +25,7 @@ const AppLayout = () => {
         <Row>
           <Col>
             <ExploreTodo />
+            {/* <TestPage/> */}
           </Col>
         </Row>
       </Container>

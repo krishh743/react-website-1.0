@@ -31,6 +31,7 @@ function HomePage() {
             </div>
           ))}
         </div>
+
         <div className="main-container">
           <div className="row-contents-section">
             <div className="text-section">
@@ -102,7 +103,7 @@ function HomePage() {
               </div>
             </div>
             <div className="video-container">
-              <video width={500} height={500} controls>
+              <video width={500} height={500} controls autoPlay>
                 <source
                   src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
                   type="video/mp4"

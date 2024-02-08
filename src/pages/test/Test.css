@@ -1,0 +1,29 @@
+.main-container {
+    position: relative;
+  }
+  .video-container {
+    position: sticky;
+    bottom: 50%;
+    background-color: #fcf4ed;
+    padding: 20px;
+    top: 25%;
+    border-radius: 10px;
+  }
+  .row-contents-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 30px;
+    padding: 5rem;
+  }
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 600px;
+  } 
+
+  

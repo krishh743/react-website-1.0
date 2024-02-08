@@ -11,7 +11,6 @@ function Footer() {
         minHeight: "92vh",
         paddingTop: "15px",
         // backgroundImage: "linear-gradient(to bottom, #fcf4ed, transparent)",
-        
       }}
     >
       <div className="footer-page">
@@ -79,22 +78,22 @@ function Footer() {
               <ul className="social-media-list">
                 <li>
                   <a href="https://www.facebook.com">
-                    <MdOutlineFacebook size={30} />
+                    <MdOutlineFacebook size={30} color="#FF5612" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.twitter.com">
-                    <FaLinkedin size={30} />
+                    <FaLinkedin size={30} color="#FF5612" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.instagram.com">
-                    <FaLinkedin size={30} />
+                    <FaLinkedin size={30} color="#FF5612" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.instagram.com">
-                    <FaLinkedin size={30} />
+                    <FaLinkedin size={30} color="#FF5612" />
                   </a>
                 </li>
                 {/* Add more social media icons as needed */}
@@ -107,7 +106,7 @@ function Footer() {
           </ul>
           <ul className="row-list">
             <li
-              style={{ fontSize: "22px", fontWeight: "bold", color: "#874600" }}
+              style={{ fontSize: "22px", fontWeight: "bold", color: "#FF5612" }}
             >
               Features
             </li>
@@ -118,7 +117,7 @@ function Footer() {
           </ul>
           <ul className="row-list">
             <li
-              style={{ fontSize: "22px", fontWeight: "bold", color: "#874600" }}
+              style={{ fontSize: "22px", fontWeight: "bold", color: "#FF5612" }}
             >
               Resources
             </li>
@@ -129,7 +128,7 @@ function Footer() {
           </ul>
           <ul className="row-list">
             <li
-              style={{ fontSize: "22px", fontWeight: "bold", color: "#874600" }}
+              style={{ fontSize: "22px", fontWeight: "bold", color: "#FF5612" }}
             >
               Company
             </li>

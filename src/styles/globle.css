@@ -89,6 +89,8 @@
   gap: 15px;
 }
 
+
+
 .main-container {
   position: relative;
 }
@@ -97,7 +99,7 @@
   bottom: 50%;
   background-color: #fcf4ed;
   padding: 20px;
-  top: 0;
+  top: 25%;
   border-radius: 10px;
 }
 .row-contents-section {
@@ -106,7 +108,6 @@
   justify-content: start;
   align-items: start;
   gap: 30px;
-  /* min-height: 90vh; */
   padding: 5rem;
 }
 .text-section {
@@ -116,16 +117,15 @@
   align-items: center;
   gap: 30px;
   max-width: 600px;
-  /* background-color: black; */
-}
+} 
 
-.second-row {
+/* .second-row {
   padding: 55px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
-}
+} */
 
 .task-name-row {
   display: flex;

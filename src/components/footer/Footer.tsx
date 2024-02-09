@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineFacebook } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
+import '../../styles/globle.css'
 
 function Footer() {
   return (
@@ -14,26 +15,21 @@ function Footer() {
       }}
     >
       <div className="footer-page">
-        <div className="heading">
-          <span style={{ fontSize: "50px", fontWeight: "bold" }}>
-            Gain calmness and clarity with the
+        <div className="big-heading">
+          <span>
+            Find your book's core audience, author your expertise and
           </span>
-          <span style={{ fontSize: "40px", fontWeight: "bold" }}>
+          <span>
             {" "}
-            world’s most beloved productivity app
+            maximize your book's reach with ZebraLearn
           </span>
         </div>
 
         <div
-          style={{
-            fontSize: "20px",
-            maxWidth: "600px",
-            color: "gray",
-            lineHeight: "30px",
-            textAlign: "center", // Center align text for smaller screens
-          }}
+         className="first-subheading"
         >
-          337,000+ ★★★★★ reviews on Google Play and App Store
+          So you can position yourself as a go-to expert in your field and get
+          the recognition, opportunities, and success that come with it.
         </div>
         <button
           style={{
@@ -47,7 +43,7 @@ function Footer() {
             cursor: "pointer",
           }}
         >
-          Start Free
+          Write with us
         </button>
         <a
           href="download"
@@ -96,7 +92,6 @@ function Footer() {
                     <FaLinkedin size={30} color="#FF5612" />
                   </a>
                 </li>
-                {/* Add more social media icons as needed */}
               </ul>
             </li>
 

@@ -17,7 +17,7 @@ const TestPage: React.FC = () => {
       if (!videoContainer) return;
 
       const videoContainerRect = videoContainer.getBoundingClientRect();
-      const rows = document.querySelectorAll(".text-section > div");
+      const rows = document.querySelectorAll(".scrolls");
 
       let maxVisiblePercentage = 0;
       let maxVisibleIndex = 0;
@@ -57,31 +57,77 @@ const TestPage: React.FC = () => {
       <div className="main-container">
         <div className="row-contents-section">
           <div className="text-section">
-            {[...Array(3)].map((_, index) => (
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "40px",
-                  minHeight: "100vh", // Change minHeight to 100vh to cover the entire viewport height
-                  alignContent: "center",
-                  justifyContent: "center"
-                }}
-              >
-                <span style={{ fontSize: "18px", color: "red" }}>
-                  Clear your mind
-                </span>
-                <span style={{ fontSize: "40px", fontWeight: "bold" }}>
-                  The fastest way to get tasks out of your head.
-                </span>
-                <span style={{ fontSize: "18px", color: "gray" }}>
-                  Type just about anything into the task field and Todoist’s
-                  one-of-its-kind natural language recognition will instantly
-                  fill your to-do list.
-                </span>
-              </div>
-            ))}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "40px",
+                minHeight: "100vh", // Change minHeight to 100vh to cover the entire viewport height
+                alignContent: "center",
+                justifyContent: "center"
+              }}
+              className="first-row"
+
+            >
+              <span className="scrolls" style={{ fontSize: "18px", color: "red" }}>
+                first row
+              </span>
+              <span style={{ fontSize: "40px", fontWeight: "bold" }}>
+                The fastest way to get tasks out of your head.
+              </span>
+              <span style={{ fontSize: "18px", color: "gray" }}>
+                Type just about anything into the task field and Todoist’s
+                one-of-its-kind natural language recognition will instantly
+                fill your to-do list.
+              </span>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "40px",
+                minHeight: "100vh", // Change minHeight to 100vh to cover the entire viewport height
+                alignContent: "center",
+                justifyContent: "center"
+              }}
+              className="second-row"
+
+            >
+              <span className="scrolls" style={{ fontSize: "18px", color: "red" }}>
+                second row
+              </span>
+              <span style={{ fontSize: "40px", fontWeight: "bold" }}>
+                The fastest way to get tasks out of your head.
+              </span>
+              <span style={{ fontSize: "18px", color: "gray" }}>
+                Type just about anything into the task field and Todoist’s
+                one-of-its-kind natural language recognition will instantly
+                fill your to-do list.
+              </span>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "40px",
+                minHeight: "100vh", // Change minHeight to 100vh to cover the entire viewport height
+                alignContent: "center",
+                justifyContent: "center"
+              }}
+              className="third-row"
+            >
+              <span  style={{ fontSize: "18px", color: "red" }}>
+                third row
+              </span>
+              <span style={{ fontSize: "40px", fontWeight: "bold" }}>
+                The fastest way to get tasks out of your head.
+              </span>
+              <span style={{ fontSize: "18px", color: "gray" }}>
+                Type just about anything into the task field and Todoist’s
+                one-of-its-kind natural language recognition will instantly
+                fill your to-do list.
+              </span>
+            </div>
           </div>
           <div className="video-container">
             <video ref={videoRef} width={500} height={500} controls>

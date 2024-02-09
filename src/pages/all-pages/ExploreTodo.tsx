@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../../styles/globle.css";
-import { Card } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
 
-import { cardsData } from "../../utills/data";
-import CarouselPage from "../../components/carousel/Carousel";
+import { cardsData, carouselCardData } from "../../utills/data";
 
 function ExploreTodo() {
-  
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const gallery = galleryRef.current;
+
+    const handleAnimationEnd = () => {
+      if (gallery) {
+        gallery.style.transition = "none";
+        gallery.style.transform = "translateX(0)";
+        void gallery.offsetWidth; // Trigger reflow
+        gallery.style.transition = "transform 15s linear infinite";
+      }
+    };
+
+    if (gallery) {
+      gallery.addEventListener("animationend", handleAnimationEnd);
+    }
+
+    return () => {
+      if (gallery) {
+        gallery.removeEventListener("animationend", handleAnimationEnd);
+      }
+    };
+  }, []);
   return (
     <div>
       <div
@@ -18,46 +40,56 @@ function ExploreTodo() {
         }}
       >
         <div className="explore-heading">
-          <span style={{ fontSize: "38px" }}>
-            Explore all Todoist has to offer
+          <span className="medium-heading">
+            What to Expect When you Work with ZebraLearn
           </span>
           <div className="task-name-row">
             {cardsData.map((card) => (
-              <Card
-                key={card.id}
-                style={{
-                  width: "15rem",
-                  border: "1px solid grey",
-                  borderRadius: "10px",
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={card.image}
-                  height={150}
-                  style={{ width: "15rem", borderRadius: "10px" }}
-                />
-                <Card.Body style={{ padding: "20px" }}>
-                  <Card.Title style={{ textAlign: "center", fontSize: "20px" }}>
-                    {card.title}
-                  </Card.Title>
-                </Card.Body>
-              </Card>
+              <div className="expect-zebralearn">
+                {/* <span>{card.id}</span> */}
+                <span className="small-heading-gray-color">{card.title}</span>
+              </div>
             ))}
           </div>
         </div>
-       
+
         <div className="carousel-section">
           <div className="carousel-text-section">
-            <span style={{fontSize: "20px",color:"red" }}>In it for the long haul</span>
-            <span style={{fontSize: "50px",fontWeight:"bold" }}>A task manager you can trust for life</span>
-            <span style={{fontSize: "22px",color:'gray' }}>
-              We’ve been building Todoist for 17 years and 9 days. Rest assured
-              that we’ll never sell out to the highest bidder.
+            <span className="small-heading-red-color">
+              How can ZebraLearn Help?
+            </span>
+            <span className="medium-heading">
+              What we have achieved so far!
+            </span>
+            <span className="small-heading-gray-color">
+              ZebraLearn has been creating and selling books for 4+ years now!
+              With Multiple Bestsellers & thousands of 5 Star Reviews, we are a
+              thriving platform for ambitious authors.
             </span>
           </div>
           <div>
-            <CarouselPage />
+            <div className="gallery-container">
+              <div ref={galleryRef} className="gallery">
+                {carouselCardData.map((card) => (
+                     <div className="expect-zebralearn">
+                     <span>{card.text}</span>
+                     <span className="small-heading-gray-color">
+                       {card.title}
+                     </span>
+                   </div>
+                  // <Card key={card.id} className="m-2">
+                  //   <Card.Img variant="top" src={card.imageSrc} />
+                  //   <Card.Body style={{ textAlign: "center" }}>
+                  //     <Card.Title className="small-heading-gray-color">
+                  //     </Card.Title>
+                  //     <Card.Text className="small-heading-gray-color">
+                  //       {card.text}
+                  //     </Card.Text>
+                  //   </Card.Body>
+                  // </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

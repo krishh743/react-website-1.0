@@ -19,7 +19,8 @@ body {
 }
 
 .big-heading {
-  font-size: 55px;
+  font-size: 3rem;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -327,6 +328,11 @@ body {
   margin: 0;
 }
 
+.stepper-left-right-contents-size{
+min-width: 450px;
+padding: 2rem;
+}
+
 .line {
   position: absolute; 
   top: 90%; 
@@ -337,15 +343,11 @@ body {
 }
 
 .active .line {
-  /* background-color: #ff5612;  */
+  background-color: #ff5612; 
 }
 
 
-.stepers-content {
-  padding: 2rem;
-}
-
-.stepers-content {
+.steppers-content {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -61,7 +61,7 @@ const VerticalStepper = () => {
   return (
     <div className="stepper-container">
       <div className="stepper-headings">
-        <span style={{ fontSize: "3rem" }}>
+        <span className="medium-heading">
           Work with our Seamless Process From Day-1 to Selling the 1st Copy.
         </span>
         <span style={{ fontSize: "2.5rem", color: "grey" }}>
@@ -71,12 +71,12 @@ const VerticalStepper = () => {
       </div>
 
       <div className="stepper-section">
-        <div>
+        <div className="stepper-left-right-contents-size">
           <video
             ref={videoRef}
             src={"/images/stepper.webm"}
-            height={300}
-            width={300}
+            height={350}
+            width={350}
             autoPlay
           />
         </div>
@@ -101,9 +101,9 @@ const VerticalStepper = () => {
           ))}
         </div>
 
-        <div className="stepers-section">
+        <div className="stepper-left-right-contents-size">
           {activeStep === 0 && (
-            <div className="stepers-content">
+            <div className="steppers-content">
               <button
                 style={{
                   width: "150px",
@@ -123,7 +123,7 @@ const VerticalStepper = () => {
             </div>
           )}
           {activeStep === 1 && (
-            <div className="stepers-content">
+            <div className="steppers-content">
               <button
                 style={{
                   width: "150px",
@@ -151,7 +151,7 @@ const VerticalStepper = () => {
           )}
 
           {activeStep === 2 && (
-            <div className="stepers-content">
+            <div className="steppers-content">
               <button
                 style={{
                   width: "150px",
@@ -180,7 +180,7 @@ const VerticalStepper = () => {
             </div>
           )}
           {activeStep === 3 && (
-            <div className="stepers-content">
+            <div className="steppers-content">
               <button
                 style={{
                   width: "150px",
@@ -209,7 +209,7 @@ const VerticalStepper = () => {
             </div>
           )}
           {activeStep === 4 && (
-            <div className="stepers-content">
+            <div className="steppers-content">
               <button
                 style={{
                   width: "150px",

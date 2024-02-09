@@ -6,28 +6,21 @@ function HomePage() {
   return (
     <div className="main-contents">
       <div className="logos-section">
-        <div style={{ fontSize: "20px" }}>
-          30 million+ people and teams trust their sanity and productivity to
-          Todoist
+        <div className="small-heading">
+          We make books in ZebraLearn Style! Our books are immersive, exhaustive
+          & actionable!
         </div>
         <div className="logos-group">
           {companinesData.map((logo) => (
-            <div
-              key={logo.id}
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <div style={{ height: "40px", width: "40px" }}>
+            <div key={logo.id} className="company-cards-section">
+              <div className="group-logo-size">
                 <img
                   src={logo.imageSrc}
                   alt={logo.name}
                   style={{ height: "100%" }}
                 />
               </div>
-              <div
-                style={{ fontSize: "30px", marginLeft: "10px", color: "gray" }}
-              >
-                {logo.name}
-              </div>
+              <div className="small-heading-gray-color">{logo.name}</div>
             </div>
           ))}
         </div>
@@ -39,66 +32,74 @@ function HomePage() {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "40px",
+                  gap: "30px",
                   minHeight: "70vh",
                   alignContent: "center",
                   justifyContent: "center",
                 }}
               >
-                <span style={{ fontSize: "18px", color: "red" }}>
-                  Clear your mind
+                <span className="small-heading-red-color">
+                  How can ZebraLearn Help?
                 </span>
-                <span style={{ fontSize: "40px", fontWeight: "bold" }}>
-                  The fastest way to get tasks out of your head.
+                <span className="medium-heading">
+                  Get done everything at one place, without chaos
                 </span>
-                <span style={{ fontSize: "18px", color: "gray" }}>
-                  Type just about anything into the task field and Todoist’s
-                  one-of-its-kind natural language recognition will instantly
-                  fill your to-do list.
-                </span>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "40px",
-                  minHeight: "80vh",
-                  alignContent: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <span style={{ fontSize: "18px", color: "red" }}>
-                  Clear your mind
-                </span>
-                <span style={{ fontSize: "40px", fontWeight: "bold" }}>
-                  The fastest way to get tasks out of your head.
-                </span>
-                <span style={{ fontSize: "18px", color: "gray" }}>
-                  Type just about anything into the task field and Todoist’s
-                  one-of-its-kind natural language recognition will instantly
-                  fill your to-do list.
+                <span className="small-heading-gray-color">
+                  <ul>
+                    <li>We write, design, publish and promote your book</li>
+                    <li style={{ marginBlock: "10px" }}>
+                      Get your book launched in market within 12 weeks
+                    </li>
+                    <li>No more hit-&-trial, we guide you at every step</li>
+                  </ul>
                 </span>
               </div>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "40px",
+                  gap: "30px",
                   minHeight: "80vh",
                   alignContent: "center",
                   justifyContent: "center",
                 }}
               >
-                <span style={{ fontSize: "18px", color: "red" }}>
-                  Clear your mind
+                <span className="small-heading-red-color">
+                  How can ZebraLearn Help?
                 </span>
-                <span style={{ fontSize: "40px", fontWeight: "bold" }}>
-                  The fastest way to get tasks out of your head.
+                <span className="medium-heading">
+                  World-class book from your expertise
                 </span>
-                <span style={{ fontSize: "18px", color: "gray" }}>
-                  Type just about anything into the task field and Todoist’s
-                  one-of-its-kind natural language recognition will instantly
-                  fill your to-do list.
+                <span className="small-heading-gray-color">
+                  <ul>
+                    <li>Conceptually design to simplify concepts</li>
+                    <li style={{ marginBlock: "10px" }}>
+                      Focus on understandability to bring out the best
+                    </li>
+                    <li>3x increase in Retention with design</li>
+                  </ul>
+                </span>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "30px",
+                  minHeight: "80vh",
+                  alignContent: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <span className="small-heading-red-color">Clear your mind</span>
+                <span className="medium-heading">We Market, You Monetise</span>
+                <span className="small-heading-gray-color">
+                  <ul className="d-flex flex-column gap-4">
+                    <li>We invest in your book to bring it to life</li>
+                    <li style={{ marginBlock: "10px" }}>
+                      We promote your book across marketing channels
+                    </li>
+                    <li>Above Industry Standard commission for you</li>
+                  </ul>
                 </span>
               </div>
             </div>
@@ -108,7 +109,6 @@ function HomePage() {
                   src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
                   type="video/mp4"
                 />
-                Your browser does not support the video tag.
               </video>
             </div>
           </div>

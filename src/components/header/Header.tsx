@@ -1,26 +1,7 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
-// import { Button, Menu, Dropdown, Avatar } from "antd";
-// import {
-//   UserOutlined,
-//   SettingOutlined,
-//   LogoutOutlined,
-// } from "@ant-design/icons";
 
 const Header = () => {
-  // const menu = (
-  //   <Menu>
-  //     <Menu.Item key="1" icon={<UserOutlined />}>
-  //       Profile
-  //     </Menu.Item>
-  //     <Menu.Item key="2" icon={<SettingOutlined />}>
-  //       Settings
-  //     </Menu.Item>
-  //     <Menu.Item key="3" icon={<LogoutOutlined />}>
-  //       Logout
-  //     </Menu.Item>
-  //   </Menu>
-  // );
 
   return (
     <header

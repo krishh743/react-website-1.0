@@ -69,3 +69,48 @@ export const carouselCardData = [
     text: "Thousands of Reviews by our Readers",
   },
 ];
+
+
+export const footerTestimonialData =[
+  {
+    "id": 1,
+    "title": "Name 1",
+    "description": "Description for card 1",
+    "imageUrl": "https://via.placeholder.com/150",
+    "socialMediaIcons": ["FaTwitter"]
+  },
+  {
+    "id": 2,
+    "title": "Name 2",
+    "description": "Description for card 2",
+    "imageUrl": "https://via.placeholder.com/150",
+    "socialMediaIcons": ["FaTwitter"]
+  },
+  {
+    "id": 3,
+    "title": "Name 3",
+    "description": "Description for card 3",
+    "imageUrl": "https://via.placeholder.com/150",
+    "socialMediaIcons": ["FaTwitter"]
+  },
+  {
+    "id": 4,
+    "title": "Card 3",
+    "description": "Description for card 3",
+    "imageUrl": "https://via.placeholder.com/150",
+    "socialMediaIcons": ["FaTwitter"]
+  },{
+    "id": 5,
+    "title": "Card 3",
+    "description": "Description for card 3",
+    "imageUrl": "https://via.placeholder.com/150",
+    "socialMediaIcons": ["FaTwitter"]
+  },{
+    "id": 6,
+    "title": "Card 3",
+    "description": "Description for card 3",
+    "imageUrl": "https://via.placeholder.com/150",
+    "socialMediaIcons": ["FaTwitter"]
+  }
+]
+

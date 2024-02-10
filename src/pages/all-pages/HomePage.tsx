@@ -28,16 +28,7 @@ function HomePage() {
         <div className="main-container">
           <div className="row-contents-section">
             <div className="text-section">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "30px",
-                  minHeight: "70vh",
-                  alignContent: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="sub-texts">
                 <span className="small-heading-red-color">
                   How can ZebraLearn Help?
                 </span>
@@ -54,16 +45,7 @@ function HomePage() {
                   </ul>
                 </span>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "30px",
-                  minHeight: "80vh",
-                  alignContent: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="sub-texts">
                 <span className="small-heading-red-color">
                   How can ZebraLearn Help?
                 </span>
@@ -80,16 +62,7 @@ function HomePage() {
                   </ul>
                 </span>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "30px",
-                  minHeight: "80vh",
-                  alignContent: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="sub-texts">
                 <span className="small-heading-red-color">Clear your mind</span>
                 <span className="medium-heading">We Market, You Monetise</span>
                 <span className="small-heading-gray-color">

@@ -5,17 +5,17 @@ import HomePage from "../../pages/all-pages/HomePage";
 import ExploreTodo from "../../pages/all-pages/ExploreTodo";
 import Footer from "../footer/Footer";
 import VerticalStepper from "../../pages/all-pages/StepperPage";
-// import TestPage from "../../pages/test/Test";
 
 const AppLayout = () => {
   return (
+    // <div style={{overflowX:"hidden"}}>
     <div>
       <Header />
 
       <LandingPage />
 
       <HomePage />
-  <VerticalStepper/>
+      <VerticalStepper />
       <ExploreTodo />
 
       <Footer />

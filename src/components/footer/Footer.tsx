@@ -1,50 +1,26 @@
 import React from "react";
 import { MdOutlineFacebook } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
-import '../../styles/globle.css'
+import "../../styles/globle.css";
+// import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
+// import { FaTwitter, FaFacebook, FaInstagram,FaLinkedin } from "react-icons/fa";
+import { footerTestimonialData } from "../../utills/data";
 
 function Footer() {
   return (
-    <footer
-      style={{
-        textAlign: "center",
-        backgroundColor: "#fcf4ed",
-        minHeight: "92vh",
-        paddingTop: "15px",
-        // backgroundImage: "linear-gradient(to bottom, #fcf4ed, transparent)",
-      }}
-    >
+    <footer className="footer-container">
       <div className="footer-page">
         <div className="big-heading">
-          <span>
-            Find your book's core audience, author your expertise and
-          </span>
-          <span>
-            {" "}
-            maximize your book's reach with ZebraLearn
-          </span>
+          <span>Find your book's core audience, author your expertise and</span>
+          <span> maximize your book's reach with ZebraLearn</span>
         </div>
 
-        <div
-         className="first-subheading"
-        >
+        <div className="first-subheading">
           So you can position yourself as a go-to expert in your field and get
           the recognition, opportunities, and success that come with it.
         </div>
-        <button
-          style={{
-            width: "150px",
-            height: "50px",
-            backgroundColor: "#FF5612",
-            color: "white",
-            fontWeight: "bold",
-            border: "none",
-            fontSize: "18px",
-            cursor: "pointer",
-          }}
-        >
-          Write with us
-        </button>
+        <button className="big-button">Write with us</button>
         <a
           href="download"
           style={{
@@ -58,7 +34,7 @@ function Footer() {
           Download
         </a>
 
-        <div className="group-list">
+        {/* <div className="group-list">
           <ul className="row-list">
             <li
               style={{ fontSize: "22px", fontWeight: "bold", color: "#FF5612" }}
@@ -132,7 +108,45 @@ function Footer() {
             <li>Inspiration Hub</li>
             <li>Press</li>
           </ul>
-        </div>
+        </div> */}
+
+        <Row className="testimonial-section">
+          {footerTestimonialData.map((card) => (
+            <Col
+              key={card.id}
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              xl={2}
+              className="mb-4"
+            >
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src={card.imageUrl}
+                  className="rounded-circle"
+                />
+                <Card.Body>
+                  <Card.Title className="first-subheading">
+                    {card.title}
+                  </Card.Title>
+                  <Card.Text className="small-heading-gray-color">
+                    {card.description}
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <div className="d-flex justify-content-around">
+                    {card.socialMediaIcons.map((icon, index) => {
+                      const IconComponent = FaLinkedin; // you should replace this with the correct icon component based on the icon name
+                      return <IconComponent size={25} key={index} color="#FF5612"/>;
+                    })}
+                  </div>
+                </Card.Footer>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </div>
     </footer>
   );

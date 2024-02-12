@@ -1,13 +1,13 @@
 body {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   overflow-x: hidden;
 }
 
-.header-text{
+.header-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #FF5612;
+  color: #ff5612;
 }
 .landing-header {
   display: flex;
@@ -18,7 +18,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06); */
 }
 
 .log-in-button {
@@ -144,6 +144,7 @@ body {
   padding: 40px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
   border: 1px solid rgb(214, 204, 204);
   border-radius: 10px;
@@ -166,9 +167,9 @@ body {
   color: white;
   padding: 20px;
   width: 100%;
-  height: 600px;
+  height: 700px;
   opacity: 1;
-  transition: opacity 0.3s, transform 2s;
+  transition: opacity 0.3s, transform 1s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,16 +178,16 @@ body {
 .scroll-triggered-content {
   opacity: 0;
   transform: translateY(200px);
-  transition: opacity 0.3s, transform 2s;
+  transition: opacity 0.3s, transform 1s;
 }
 
 .scroll-triggered-content.visible {
   /* opacity: 1; */
-  transform: translateY(0);
+  transform: translateY(-50%);
 }
 
 .slide-image img {
-  width: 900px;
+  width: 1200px;
   object-fit: cover;
 }
 
@@ -205,7 +206,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 4rem;
 }
 
 .logos-group {
@@ -287,8 +288,8 @@ body {
 }
 
 .footer-container {
-  min-height: 93vh;
-  padding-top: 15px;
+  min-height: 90vh;
+  padding-top: 2rem;
   background-color: #fcf4ed;
   text-align: center;
 }
@@ -299,7 +300,13 @@ body {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  gap: 20px; /* Decrease gap for smaller screens */
+  gap: 3rem; /* Decrease gap for smaller screens */
+}
+
+.footer-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  max-width: 80%;
 }
 
 .group-list {
@@ -330,10 +337,10 @@ body {
 .carousel-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
-  padding-inline: 12rem;
+  /* gap: 30px;
+  padding-inline: 12rem; */
   min-height: 60vh;
 }
 
@@ -343,11 +350,12 @@ body {
   justify-content: space-between;
   gap: 30px;
   padding: 30px;
+  max-width: 700px;
 }
 
 .gallery-container {
   overflow: hidden;
-  max-width: 600px;
+  max-width: 700px;
   /* background: linear-gradient(to right, transparent, mistyrose); */
   -webkit-mask: linear-gradient(
     to right,
@@ -395,7 +403,7 @@ body {
   gap: 20px;
   position: sticky;
   top: 20%;
-  bottom: 10%;
+  bottom: 0%;
 }
 
 .stepper-headings {
@@ -422,7 +430,7 @@ body {
 .stepper {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .step {
@@ -445,16 +453,16 @@ body {
 
 .line {
   position: absolute;
-  top: 90%;
+  top: 75%;
   left: 50%;
   height: 100%;
   width: 4px;
   background-color: grey;
 }
 
-.active .line {
-  /* background-color: #ff5612;  */
-}
+/* .active .line {
+  background-color: #ff5612; 
+} */
 
 .steppers-content {
   display: flex;
@@ -465,28 +473,17 @@ body {
 
 /* stepper css end */
 
-
-
 /* footer page */
 
 img.rounded-circle {
   border-radius: 50%;
 }
 
-
-.testimonial-section{
+.testimonial-section {
   display: flex;
   flex-direction: row;
   gap: 2rem;
 }
-
-
-
-
-
-
-
-
 
 @media only screen and (max-width: 768px) {
   .slide-image,
@@ -499,20 +496,20 @@ img.rounded-circle {
     padding-inline: 1rem;
   }
 
-.header-text{
-  font-size: 1.2rem;
-}
+  .header-text {
+    font-size: 1.2rem;
+  }
 
-.log-in-button {
-  /* font-size: 1rem;
+  .log-in-button {
+    /* font-size: 1rem;
   padding-inline: 20px; */
-  display: none;
-}
+    display: none;
+  }
 
-.start-free-btn {
-  font-size: 1rem;
-  padding-inline: 5px; 
-}
+  .start-free-btn {
+    font-size: 1rem;
+    padding-inline: 5px;
+  }
 
   .first-landing-page {
     padding: 0.5rem;
@@ -621,7 +618,130 @@ img.rounded-circle {
     padding: 2rem;
   }
 
-  .testimonial-section{
+  .testimonial-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 100%;
+  }
+}
+
+/* @media only screen and (min-width: 1024px) { */
+@media only screen and (max-width: 1024px) {
+  .slide-image,
+  .video-container,
+  video {
+    width: 300px;
+    height: 300px;
+  }
+  .carousel-section {
+    flex-direction: row;
+    gap: 15px;
+    padding-inline: 1rem;
+  }
+  .landing-header {
+    padding-inline: 1rem;
+  }
+
+  .start-free-btn {
+    font-size: 1rem;
+    padding-inline: 5px;
+  }
+
+  .first-landing-page {
+    padding: 0.5rem;
+  }
+
+  .big-heading {
+    font-size: 1.5rem;
+  }
+
+  .medium-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .carousel-section {
+    flex-direction: row;
+    gap: 15px;
+    padding-inline: 1rem;
+  }
+
+  .slide-image img {
+    width: 400px;
+  }
+
+  .main-heading-section {
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .bg-image {
+    height: 80vh;
+  }
+  .main-contents {
+    padding: 1rem;
+    gap: 2rem;
+  }
+  .logos-group {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .company-cards-section {
+    gap: 2rem;
+  }
+  .main-container {
+    padding: 0;
+  }
+
+  .row-contents-section {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .sub-texts {
+    gap: 1rem;
+    min-height: 10vh;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .stepper-subheading {
+    font-size: 1.2rem;
+    color: gray;
+  }
+
+  .stepper-container {
+    height: auto;
+    padding: 2rem;
+  }
+  .stepper-section {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0rem;
+  }
+  .stepper-left-contents-size {
+
+    display: block;
+  }
+  .stepper-right-contents-size {
+    min-width: 200px;
+    padding: 2rem;
+  }
+
+  .task-name-row {
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem;
+  }
+
+  .testimonial-section {
     display: flex;
     flex-direction: column;
     gap: 2rem;

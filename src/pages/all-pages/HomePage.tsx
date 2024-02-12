@@ -3,6 +3,7 @@ import "../../styles/globle.css";
 import { companinesData } from "../../utills/data";
 
 function HomePage() {
+  
   return (
     <div className="main-contents">
       <div className="logos-section">
@@ -63,7 +64,9 @@ function HomePage() {
                 </span>
               </div>
               <div className="sub-texts">
-                <span className="small-heading-red-color">Clear your mind</span>
+                <span className="small-heading-red-color">
+                  How can ZebraLearn Help?
+                </span>
                 <span className="medium-heading">We Market, You Monetise</span>
                 <span className="small-heading-gray-color">
                   <ul className="d-flex flex-column gap-4">

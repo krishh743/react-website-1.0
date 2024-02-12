@@ -3,6 +3,7 @@ import "../../styles/globle.css";
 // import { Card } from "react-bootstrap";
 
 import { cardsData, carouselCardData } from "../../utills/data";
+import { Card } from "react-bootstrap";
 
 function ExploreTodo() {
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -46,7 +47,7 @@ function ExploreTodo() {
           <div className="task-name-row">
             {cardsData.map((card) => (
               <div className="expect-zebralearn">
-                {/* <span>{card.id}</span> */}
+               
                 <span className="small-heading-gray-color">{card.title}</span>
               </div>
             ))}
@@ -61,7 +62,10 @@ function ExploreTodo() {
             <span className="medium-heading">
               What we have achieved so far!
             </span>
-            <span className="small-heading-gray-color">
+            <span
+              className="small-heading-gray-color"
+              style={{ lineHeight: "35px" }}
+            >
               ZebraLearn has been creating and selling books for 4+ years now!
               With Multiple Bestsellers & thousands of 5 Star Reviews, we are a
               thriving platform for ambitious authors.
@@ -71,22 +75,21 @@ function ExploreTodo() {
             <div className="gallery-container">
               <div ref={galleryRef} className="gallery">
                 {carouselCardData.map((card) => (
-                     <div className="expect-zebralearn">
-                     <span>{card.text}</span>
-                     <span className="small-heading-gray-color">
-                       {card.title}
-                     </span>
-                   </div>
-                  // <Card key={card.id} className="m-2">
-                  //   <Card.Img variant="top" src={card.imageSrc} />
-                  //   <Card.Body style={{ textAlign: "center" }}>
-                  //     <Card.Title className="small-heading-gray-color">
-                  //     </Card.Title>
-                  //     <Card.Text className="small-heading-gray-color">
-                  //       {card.text}
-                  //     </Card.Text>
-                  //   </Card.Body>
-                  // </Card>
+                  //    <div className="expect-zebralearn">
+                  //    <span>{card.text}</span>
+                  //    <span className="small-heading-gray-color">
+                  //      {card.title}
+                  //    </span>
+                  //  </div>
+                  <Card key={card.id} className="m-2">
+                    <Card.Img variant="top" src={card.imageSrc} />
+                    <Card.Body style={{ textAlign: "center" }}>
+                      <Card.Title className="small-heading-gray-color"></Card.Title>
+                      <Card.Text className="small-heading-gray-color">
+                        {card.text}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
                 ))}
               </div>
             </div>

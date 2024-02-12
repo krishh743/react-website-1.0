@@ -30,13 +30,12 @@ const VerticalStepper = () => {
     const handleScroll = () => {
       if (stepperRef.current) {
         const stepperPosition =
-          stepperRef.current.getBoundingClientRect().bottom;
+          stepperRef.current.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
         // Calculate which step should be active based on scroll position
-        const stepIndex = Math.floor((windowHeight - stepperPosition) / 50);
+        const stepIndex = Math.floor((windowHeight - stepperPosition) / 250);
         setActiveStep(stepIndex);
-
         // Seek video to appropriate timestamp based on active step
         if (videoRef.current) {
           videoRef.current.currentTime = stepIndex;
@@ -99,11 +98,9 @@ const VerticalStepper = () => {
                     className={`line ${index === activeStep ? "active" : ""}`}
                   />
                 )}
-
               </div>
             ))}
           </div>
-
           <div className="stepper-right-contents-size">
             {activeStep === 0 && (
               <div className="steppers-content">

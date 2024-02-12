@@ -1,17 +1,14 @@
 import React from "react";
-import { MdOutlineFacebook } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import "../../styles/globle.css";
-// import { Col, Container, Row } from "react-bootstrap";
-import { Container, Row, Col, Card } from "react-bootstrap";
-// import { FaTwitter, FaFacebook, FaInstagram,FaLinkedin } from "react-icons/fa";
+import { Row, Col, Card } from "react-bootstrap";
 import { footerTestimonialData } from "../../utills/data";
 
 function Footer() {
   return (
     <footer className="footer-container">
       <div className="footer-page">
-        <div className="big-heading">
+        <div className="footer-heading">
           <span>Find your book's core audience, author your expertise and</span>
           <span> maximize your book's reach with ZebraLearn</span>
         </div>
@@ -138,8 +135,10 @@ function Footer() {
                 <Card.Footer>
                   <div className="d-flex justify-content-around">
                     {card.socialMediaIcons.map((icon, index) => {
-                      const IconComponent = FaLinkedin; // you should replace this with the correct icon component based on the icon name
-                      return <IconComponent size={25} key={index} color="#FF5612"/>;
+                      const IconComponent = FaLinkedin;
+                      return (
+                        <IconComponent size={25} key={index} color="#FF5612" />
+                      );
                     })}
                   </div>
                 </Card.Footer>

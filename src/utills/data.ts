@@ -11,24 +11,23 @@ export const cardsData = [
   {
     id: 1,
     title: "Full-scale guidance",
-    // image: "/images/sliding_image.png",
+    image: "/images/first.webp",
   },
   {
     id: 2,
     title: "We invest, We promote",
-    // image: "/images/sliding_image.png",
+    image: "/images/second.png",
   },
   {
     id: 3,
     title: "Premium Quality of book    ",
-    // image: "/images/sliding_image.png",
+    image: "/images/third.png",
   },
   {
     id: 4,
     title: "Timely payments    ",
-    // image: "/images/sliding_image.png",
+    image: "/images/fourth.png",
   },
-  
 ];
 
 export const carouselCardData = [
@@ -70,47 +69,47 @@ export const carouselCardData = [
   },
 ];
 
-
-export const footerTestimonialData =[
+export const footerTestimonialData = [
   {
-    "id": 1,
-    "title": "Name 1",
-    "description": "Description for card 1",
-    "imageUrl": "https://via.placeholder.com/150",
-    "socialMediaIcons": ["FaTwitter"]
+    id: 1,
+    title: "Name 1",
+    description: "Description for card 1",
+    imageUrl: "https://via.placeholder.com/150",
+    socialMediaIcons: ["FaTwitter"],
   },
   {
-    "id": 2,
-    "title": "Name 2",
-    "description": "Description for card 2",
-    "imageUrl": "https://via.placeholder.com/150",
-    "socialMediaIcons": ["FaTwitter"]
+    id: 2,
+    title: "Name 2",
+    description: "Description for card 2",
+    imageUrl: "https://via.placeholder.com/150",
+    socialMediaIcons: ["FaTwitter"],
   },
   {
-    "id": 3,
-    "title": "Name 3",
-    "description": "Description for card 3",
-    "imageUrl": "https://via.placeholder.com/150",
-    "socialMediaIcons": ["FaTwitter"]
+    id: 3,
+    title: "Name 3",
+    description: "Description for card 3",
+    imageUrl: "https://via.placeholder.com/150",
+    socialMediaIcons: ["FaTwitter"],
   },
   {
-    "id": 4,
-    "title": "Card 3",
-    "description": "Description for card 3",
-    "imageUrl": "https://via.placeholder.com/150",
-    "socialMediaIcons": ["FaTwitter"]
-  },{
-    "id": 5,
-    "title": "Card 3",
-    "description": "Description for card 3",
-    "imageUrl": "https://via.placeholder.com/150",
-    "socialMediaIcons": ["FaTwitter"]
-  },{
-    "id": 6,
-    "title": "Card 3",
-    "description": "Description for card 3",
-    "imageUrl": "https://via.placeholder.com/150",
-    "socialMediaIcons": ["FaTwitter"]
-  }
-]
-
+    id: 4,
+    title: "Name 4",
+    description: "Description for card 3",
+    imageUrl: "https://via.placeholder.com/150",
+    socialMediaIcons: ["FaTwitter"],
+  },
+  {
+    id: 5,
+    title: "Name 5",
+    description: "Description for card 3",
+    imageUrl: "https://via.placeholder.com/150",
+    socialMediaIcons: ["FaTwitter"],
+  },
+  {
+    id: 6,
+    title: "Name 6",
+    description: "Description for card 3",
+    imageUrl: "https://via.placeholder.com/150",
+    socialMediaIcons: ["FaTwitter"],
+  },
+];

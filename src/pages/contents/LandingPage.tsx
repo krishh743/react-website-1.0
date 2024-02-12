@@ -43,7 +43,7 @@ function LandingPage() {
               showContent ? "visible" : ""
             }`}
             style={{
-              transform: `translateY(${showContent ? "0" : "200px"})`,
+              transform: `translateY(${showContent ? "0" : "300px"})`,
               opacity: showContent ? 1 : 0,
             }}
           >

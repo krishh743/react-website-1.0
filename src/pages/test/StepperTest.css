@@ -1,0 +1,111 @@
+.first-div{
+    order: 0;
+    place-self: auto;
+    grid-area: auto;
+    z-index: auto;
+    float: none;
+    flex-shrink: 1;
+    display: block;
+    margin: 0px;
+    inset: auto;
+    position: relative;
+    flex-basis: auto;
+    overflow: visible;
+    box-sizing: border-box;
+    width: 1088px;
+    height: 1662px;
+    padding: 0px 0px 878px;
+}
+.second-div{
+    translate: none;
+    rotate: none;
+    scale: none;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    max-width: 1088px;
+    width: 1088px;
+    max-height: 783.859px;
+    height: 783.859px;
+    padding: 0px;
+    transform: translate(0px, 0px);
+}
+
+.third-div{
+    block-size: 515px;
+}
+.fourth-div{
+    block-size: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.left-4{
+    display: flex;
+    justify-content: flex-start;
+    inline-size: 50%;
+}
+
+.mid-4{
+    --coef: 0.93;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    block-size: 100%;
+    inline-size: 103px; 
+}
+
+.span-4{
+    display: inline-flex;
+}
+.span-4-first{
+    padding: 7px 9px;
+    min-width: 34px;
+    border-radius:8px;
+    background-color: hsla(53,10%,69%,.15);
+    border-radius: 8px;
+    color: rgba(35,33,21,.65);
+    min-block-size:34px;
+    padding: 7px;
+}
+
+.mid-4-div-first{
+    flex: 1 1;
+    position: relative;
+    inline-size: 100%;
+    margin: 1.5rem 0;
+}
+
+.mid-slider{
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    inline-size: 3px;
+    border-radius: 2px;
+}
+.slider-progress{
+    --progress: 0%;
+    block-size: calc(0% * 0.93);
+    transition: block-size 150ms cubic-bezier(0.2,0.8,0.2,1);
+    background: #e44232;
+}
+.setps{
+    --progress: 0%;
+    --color-selected: #e44232;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    top: calc(0.5rem + 0% * 0.95);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.first-step-dot{
+    background-color: #fff;
+    inline-size: 1rem;
+    block-size: 1rem;
+    border-radius: 0.5rem;
+    border: 3px solid #dad6d3;
+}
+

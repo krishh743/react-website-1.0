@@ -17,7 +17,7 @@ body {
   background-color: white;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 999;
   /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06); */
 }
 
@@ -194,7 +194,7 @@ body {
 /* all pages file */
 
 .main-contents {
-  padding: 40px;
+  padding-top: 7rem;
   background-color: white;
   /* border-bottom: 1px solid lightgray; */
 }
@@ -747,4 +747,77 @@ img.rounded-circle {
     gap: 2rem;
   }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* first page sliding  */
+
+.main-container-sliding {
+  /* max-block-size: 60.625rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+  height: 75vh;
+  /* background-color: black; */
+}
+
+.first-div {
+  width: 68rem;
+  max-width: 82rem;
+}
+
+.video-sliding {
+  position: absolute;
+  top: 0;
+  /* left: 0; */
+  z-index: 1; /* Increase z-index */
+  
+}
+
+.second-div {
+  position: relative; /* Add position relative */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+.third-div {
+  position: relative;
+  width: 100%;
+  max-inline-size: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fourth-div {
+  position: absolute;
+  top: 0;
+  /* bottom: 50%; */
+  z-index: 1;
+}
+.fourth-div img {
+  width: 1300px;
+  height: 900px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  border: 1px solid black;
 }

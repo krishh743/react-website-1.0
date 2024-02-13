@@ -3,7 +3,6 @@ import "../../styles/globle.css";
 import { companinesData } from "../../utills/data";
 
 function HomePage() {
-  
   return (
     <div className="main-contents">
       <div className="logos-section">

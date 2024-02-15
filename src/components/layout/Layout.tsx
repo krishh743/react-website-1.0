@@ -16,11 +16,11 @@ const AppLayout = () => {
       <Header />
       {/* <SlidingTest /> */}
       <LandingPage />
-      {/* <StepperTest /> */}
+      <StepperTest />
       {/* <TestPage/> */}
-      <HomePage />
+      {/* <HomePage />
       <VerticalStepper />
-      <ExploreTodo />
+      <ExploreTodo /> */}
 
       <Footer />
     </div>

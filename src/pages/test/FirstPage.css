@@ -1,0 +1,34 @@
+.first-div {
+    max-block-size: 40.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-block-end:4rem;
+    border-bottom: 1px solid var(--elevated-border);
+}
+
+.div-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+.div-4{
+    position: relative;
+    width: 100%;
+    max-inline-size: 75rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.div-5{
+    position: absolute;
+    top: 0;
+}

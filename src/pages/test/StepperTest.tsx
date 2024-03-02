@@ -1,224 +1,210 @@
-import React, { useRef, useEffect } from 'react';
-import KTStepper from 'kt-stepper'; // Assuming you have imported KTStepper library
+import React, { useEffect, useRef, useState } from "react";
+import { FaCheckCircle, FaDotCircle } from "react-icons/fa";
+import "./StepperTest.css";
+import { Button } from "react-bootstrap";
 
-const StepperComponent = () => {
-  const stepperRef = useRef(null);
+const steps = [
+  { title: "0" },
+  { title: "1" },
+  { title: "2" },
+  { title: "3" },
+  { title: "4" },
+];
+
+function StepperTest() {
+  const [activeStep, setActiveStep] = useState(0);
+  const stepperRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const stepperElement = stepperRef.current;
-
-    // Initialize Stepper
-    const stepper = new KTStepper(stepperElement);
-
-    // Handle next step
-    const handleNextStep = () => {
-      stepper.goNext(); // Go to the next step
-      handleScroll();
-    };
-
-    // Handle previous step
-    const handlePreviousStep = () => {
-      stepper.goPrevious(); // Go to the previous step
-      handleScroll();
-    };
-
-    // Handle scrolling
     const handleScroll = () => {
-      const mainContainer = document.querySelector('.flex-row-fluid');
-      mainContainer.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      if (stepperRef.current) {
+        const stepperPosition =
+          stepperRef.current.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+
+        // Calculate which step should be active based on scroll position
+        const stepIndex = Math.floor((scrollPosition - stepperPosition) / 2000);
+        setActiveStep(stepIndex >= 0 ? stepIndex : 0);
+
+        // Seek video to appropriate timestamp based on active step
+        if (videoRef.current) {
+          videoRef.current.currentTime = stepIndex >= 0 ? stepIndex : 0;
+        }
+      }
     };
 
-    // Attach event listeners
-    stepper.on("kt.stepper.next", handleNextStep);
-    stepper.on("kt.stepper.previous", handlePreviousStep);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // Cleanup event listeners
-      stepper.off("kt.stepper.next", handleNextStep);
-      stepper.off("kt.stepper.previous", handlePreviousStep);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const handleStepClick = (index: number) => {
+    setActiveStep(index);
+    if (videoRef.current) {
+      videoRef.current.currentTime = index;
+    }
+  };
+
   return (
-    <div className="stepper stepper-pills stepper-column d-flex flex-column flex-lg-row" id="kt_stepper_example_vertical">
-      {/* Stepper Navigation */}
-      <div className="d-flex flex-row-auto w-100 w-lg-300px">
-        {/* Stepper Nav */}
-        <div className="stepper-nav flex-center" ref={stepperRef}>
-          {/* Step 1 */}
-          <div className="stepper-item me-5 current" data-kt-stepper-element="nav">
-            {/* Step Icon */}
-            <div className="stepper-wrapper d-flex align-items-center">
-              <div className="stepper-icon w-40px h-40px">
-                <i className="stepper-check fas fa-check"></i>
-                <span className="stepper-number">1</span>
-              </div>
-              {/* Step Label */}
-              <div className="stepper-label">
-                <h3 className="stepper-title">Step 1</h3>
-                <div className="stepper-desc">Description</div>
-              </div>
-            </div>
-            <div className="stepper-line h-40px"></div>
+    <div className="stepper-container">
+      {/* <div className="main-ss"> */}
+      <div className={`main-ss`}>
+        <div className="stepper-headings">
+          <h1 className="sub-heading">
+            Work with our Seamless Process From Day-1 to Selling the 1st Copy.
+          </h1>
+          <h2 className="stepper-subheading">
+            {" "}
+            - You give us content, we do everything else!
+          </h2>
+        </div>
+        <div className="stepper-section">
+          <div className="stepper-left-contents-size">
+            <video
+              ref={videoRef}
+              src={
+                "https://res.cloudinary.com/imagist/video/fetch/q_auto/f_auto/https%3A%2F%2Ftodoist.com%2Fstatic%2Fhome%2Fcomplexity-slider%2Fcomplexity-video.mp4"
+              }
+              // src={'https://zebralearn-content-studio.s3.ap-south-1.amazonaws.com/training/Revised+Videos/Welcome%C2%A0to%C2%A0ZebraLearn.mp4'}
+              height={500}
+              width={500}
+              autoPlay
+              muted
+            />
           </div>
-          {/* Step 2 */}
-          <div className="stepper-item me-5" data-kt-stepper-element="nav">
-            {/* Step Icon */}
-            <div className="stepper-wrapper d-flex align-items-center">
-              <div className="stepper-icon w-40px h-40px">
-                <i className="stepper-check fas fa-check"></i>
-                <span className="stepper-number">2</span>
+          <div className="stepper" ref={stepperRef}>
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className={`selling-step ${
+                  index === activeStep ? "active" : ""
+                }`}
+                onClick={() => handleStepClick(index)}
+              >
+                {index <= activeStep ? (
+                  <FaCheckCircle color="#ff5612" />
+                ) : (
+                  <FaDotCircle />
+                )}
+                {index !== steps.length - 1 && (
+                  <div
+                    className={`selling-step-line ${
+                      index === activeStep ? "active" : ""
+                    }`}
+                  />
+                )}
               </div>
-              {/* Step Label */}
-              <div className="stepper-label">
-                <h3 className="stepper-title">Step 2</h3>
-                <div className="stepper-desc">Description</div>
-              </div>
-            </div>
-            <div className="stepper-line h-40px"></div>
+            ))}
           </div>
-          {/* Step 3 */}
-          <div className="stepper-item me-5" data-kt-stepper-element="nav">
-            {/* Step Icon */}
-            <div className="stepper-wrapper d-flex align-items-center">
-              <div className="stepper-icon w-40px h-40px">
-                <i className="stepper-check fas fa-check"></i>
-                <span className="stepper-number">3</span>
+          <div className="stepper-right-contents-size">
+            {activeStep === 0 && (
+              <div className="steppers-content">
+                <Button
+                  variant="primary fw-lightly"
+                  style={{ height: 40, width: 135 }}
+                >
+                  Start
+                </Button>
+                <span className="small-heading-gray-color">
+                  Topic Discovery
+                </span>
+                <span className="small-heading-gray-color">Strategy</span>
               </div>
-              {/* Step Label */}
-              <div className="stepper-label">
-                <h3 className="stepper-title">Step 3</h3>
-                <div className="stepper-desc">Description</div>
+            )}
+            {activeStep === 1 && (
+              <div className="steppers-content">
+                <Button
+                  variant="primary fw-lightly"
+                  style={{ height: 40, width: 135 }}
+                >
+                  Write
+                </Button>
+
+                <span className="small-heading-gray-color">
+                  {" "}
+                  Content Submission
+                </span>
+                <span className="small-heading-gray-color">
+                  Content Writer Assigned
+                </span>
+                <span className="small-heading-gray-color">
+                  Content Editing
+                </span>
               </div>
-            </div>
-            <div className="stepper-line h-40px"></div>
-          </div>
-          {/* Step 4 */}
-          <div className="stepper-item me-5" data-kt-stepper-element="nav">
-            {/* Step Icon */}
-            <div className="stepper-wrapper d-flex align-items-center">
-              <div className="stepper-icon w-40px h-40px">
-                <i className="stepper-check fas fa-check"></i>
-                <span className="stepper-number">4</span>
+            )}
+
+            {activeStep === 2 && (
+              <div className="steppers-content">
+                <Button
+                  variant="primary fw-lightly"
+                  style={{ height: 40, width: 135 }}
+                >
+                  Design
+                </Button>
+
+                <span className="small-heading-gray-color">
+                  {" "}
+                  Designer Assigned
+                </span>
+                <span className="small-heading-gray-color">
+                  Conceptualization of the book
+                </span>
+                <span className="small-heading-gray-color">
+                  Design edits completion{" "}
+                </span>
               </div>
-              {/* Step Label */}
-              <div className="stepper-label">
-                <h3 className="stepper-title">Step 4</h3>
-                <div className="stepper-desc">Description</div>
+            )}
+            {activeStep === 3 && (
+              <div className="steppers-content">
+                <Button
+                  variant="primary fw-lightly"
+                  style={{ height: 40, width: 135 }}
+                >
+                  Marketing
+                </Button>
+
+                <span className="small-heading-gray-color">
+                  {" "}
+                  Marketing Material creation
+                </span>
+                <span className="small-heading-gray-color">
+                  Strategize Marketing for targeted readers
+                </span>
+                <span className="small-heading-gray-color">
+                  Set up Marketing for Launch
+                </span>
               </div>
-            </div>
+            )}
+            {activeStep === 4 && (
+              <div className="steppers-content">
+                <Button
+                  variant="primary fw-lightly"
+                  style={{ height: 40, width: 135 }}
+                >
+                  Launch
+                </Button>
+
+                <span className="small-heading-gray-color">
+                  {" "}
+                  Printed Books Arrival
+                </span>
+                <span className="small-heading-gray-color">
+                  Live on Marketplace
+                </span>
+                <span className="small-heading-gray-color">
+                  Start earning royalty per sale
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
-
-      {/* Stepper Content */}
-      <div className="flex-row-fluid">
-        {/* Form */}
-        <form className="form w-lg-500px mx-auto" noValidate="noValidate">
-          {/* Group */}
-          <div className="mb-5">
-            {/* Step 1 Content */}
-            <div className="flex-column current" data-kt-stepper-element="content">
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Example Label 1</label>
-                <input type="text" className="form-control form-control-solid" name="input1" placeholder="" value="" />
-              </div>
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Example Label 2</label>
-                <input type="text" className="form-control form-control-solid" name="input2" placeholder="" value="" />
-              </div>
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Example Label 3</label>
-                <label className="form-check form-switch form-check-custom form-check-solid">
-                  <input className="form-check-input" type="checkbox" checked="checked" value="1" />
-                  <span className="form-check-label">Switch</span>
-                </label>
-              </div>
-            </div>
-            {/* Step 2 Content */}
-            <div className="flex-column" data-kt-stepper-element="content">
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Example Label 1</label>
-                <input type="text" className="form-control form-control-solid" name="input1" placeholder="" value="" />
-              </div>
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Example Label 2</label>
-                <textarea className="form-control form-control-solid" rows="3" name="input2" placeholder=""></textarea>
-              </div>
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Example Label 3</label>
-                <label className="form-check form-check-custom form-check-solid">
-                  <input className="form-check-input" checked="checked" type="checkbox" value="1" />
-                  <span className="form-check-label">Checkbox</span>
-                </label>
-              </div>
-            </div>
-            {/* Step 3 Content */}
-            <div className="flex-column" data-kt-stepper-element="content">
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Input 1</label>
-                <input type="text" className="form-control form-control-solid" name="input1" placeholder="" value="" />
-              </div>
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Input 2</label>
-                <input type="text" className="form-control form-control-solid" name="input2" placeholder="" value="" />
-              </div>
-            </div>
-            {/* Step 4 Content */}
-            <div className="flex-column" data-kt-stepper-element="content">
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Input 1</label>
-                <input type="text" className="form-control form-control-solid" name="input1" placeholder="" value="" />
-              </div>
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Input 2</label>
-                <input type="text" className="form-control form-control-solid" name="input2" placeholder="" value="" />
-              </div>
-              {/* Input group */}
-              <div className="fv-row mb-10">
-                <label className="form-label">Input 3</label>
-                <input type="text" className="form-control form-control-solid" name="input3" placeholder="" value="" />
-              </div>
-            </div>
-          </div>
-          {/* Actions */}
-          <div className="d-flex flex-stack">
-            {/* Wrapper */}
-            <div className="me-2">
-              <button type="button" className="btn btn-light btn-active-light-primary" data-kt-stepper-action="previous">
-                Back
-              </button>
-            </div>
-            {/* Wrapper */}
-            <div>
-              <button type="button" className="btn btn-primary" data-kt-stepper-action="submit">
-                <span className="indicator-label">Submit</span>
-                <span className="indicator-progress">Please wait... <span className="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-              </button>
-              <button type="button" className="btn btn-primary" data-kt-stepper-action="next">
-                Continue
-              </button>
-            </div>
-          </div>
-          {/* Actions */}
-        </form>
-        {/* Form */}
-      </div>
     </div>
   );
-};
+}
 
-export default StepperComponent;
+export default StepperTest;

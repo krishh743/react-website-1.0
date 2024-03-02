@@ -34,7 +34,7 @@ const VerticalStepper = () => {
         const windowHeight = window.innerHeight;
 
         // Calculate which step should be active based on scroll position
-        const stepIndex = Math.floor((windowHeight - stepperPosition) / 250);
+        const stepIndex = Math.floor((windowHeight - stepperPosition) / windowHeight);
         setActiveStep(stepIndex);
         // Seek video to appropriate timestamp based on active step
         if (videoRef.current) {

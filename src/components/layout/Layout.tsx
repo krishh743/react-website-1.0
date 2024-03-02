@@ -6,22 +6,29 @@ import ExploreTodo from "../../pages/all-pages/ExploreTodo";
 import Footer from "../footer/Footer";
 import VerticalStepper from "../../pages/all-pages/StepperPage";
 import TestPage from "../../pages/test/Test";
-import SlidingTest from "../../pages/test/SlidingTest";
+// import SlidingTest from "../../pages/test/SlidingTest";
 import StepperTest from "../../pages/test/StepperTest";
+import FirstPage from "../../pages/test/FirstPage";
+// import FirstPage from "../../pages/test/SlidingTest";
+// import StepperTest from "../../pages/test/StepperTest";
 
 const AppLayout = () => {
   return (
     // <div style={{overflowX:"hidden"}}>
     <div>
       <Header />
+      {/* <SlidingTest/> */}
       {/* <SlidingTest /> */}
-      <LandingPage />
-      <StepperTest />
+      {/* <LandingPage /> */}
       {/* <TestPage/> */}
       {/* <HomePage />
-      <VerticalStepper />
       <ExploreTodo /> */}
-
+      <LandingPage />
+      <HomePage />
+      <StepperTest />
+      {/* <FirstPage /> */}
+      {/* <VerticalStepper /> */}
+      <ExploreTodo /> 
       <Footer />
     </div>
   );

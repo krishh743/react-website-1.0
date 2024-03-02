@@ -1,4 +1,4 @@
-.main-container {
+.first-page-main {
   /* max-block-size: 60.625rem; */
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   z-index: 1;
   overflow: hidden;
   border-bottom: 1px solid black;
-  height: 100vh;
+  /* height: 200vh; */
   /* background-color: black; */
 }
 
@@ -48,6 +48,7 @@ video {
   top: 0;
   /* bottom: 50%; */
   z-index: 1;
+  /* bottom: 0; */
 }
 .fourth-div img {
   width: 100%;

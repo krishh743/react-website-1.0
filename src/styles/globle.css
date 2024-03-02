@@ -389,87 +389,7 @@ body {
 
 /* stepper css start */
 
-.stepper-container {
-  height: 100vh;
-  padding: 4rem;
-  position: relative;
-}
 
-.main-ss {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  position: sticky;
-  top: 20%;
-  bottom: 0%;
-}
-
-.stepper-headings {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.stepper-subheading {
-  font-size: 2.5rem;
-  color: gray;
-}
-
-.stepper-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.stepper {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.step {
-  position: relative;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1.9rem;
-  margin: 0;
-}
-
-.stepper-left-contents-size {
-  min-width: 450px;
-  padding: 2rem;
-  /* display: block; */
-}
-.stepper-right-contents-size {
-  min-width: 450px;
-  padding: 2rem;
-}
-
-.line {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  height: 100%;
-  width: 4px;
-  background-color: grey;
-}
-
-/* .active .line {
-  background-color: #ff5612; 
-} */
-
-.steppers-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
 
 /* stepper css end */
 
@@ -752,15 +672,6 @@ img.rounded-circle {
 
 
 
-
-
-
-
-
-
-
-
-
 /* first page sliding  */
 
 .main-container-sliding {
@@ -811,12 +722,17 @@ img.rounded-circle {
 .fourth-div {
   position: absolute;
   top: 0;
-  /* bottom: 50%; */
   z-index: 1;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
 }
+
+
+
 .fourth-div img {
   width: 1300px;
-  height: 900px;
+  /* height: 900px; */
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
   border-radius: 5px;
   border: 1px solid black;

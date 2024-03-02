@@ -58,10 +58,9 @@ function LandingPage() {
             <div className="fourth-div">
               <img
                 src={"/images/sliding_image.png"}
-                alt=""
-                style={{
-                  // transform: `translateY(${scrollPosition+20}px)`,
-                  transform: `translateY(calc(${800.889 - scrollPosition}px))`,
+                alt=""                style={{
+                  // transform: `translateY(${scrollPosition}px)`,
+                  transform: `translateY(calc(${500 - scrollPosition}px))`,
 
                 }}
               />
